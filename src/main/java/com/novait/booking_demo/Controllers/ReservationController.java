@@ -30,13 +30,15 @@ public class ReservationController {
 
 
     @RequestMapping(method = RequestMethod.POST, value ="/reservations")
-    public void addReservation(@RequestBody Reservation res) {
+    public Reservation addReservation(@RequestBody Reservation res) {
         reservationService.createNewReservation(res);
+        return res;
     }
 
     @RequestMapping(method = RequestMethod.PUT, value ="/reservations/{id}")
-    public void updateReservationStatus(@RequestBody Integer status, @PathVariable Long id) {
+    public Reservation updateReservationStatus(@RequestBody Integer status, @PathVariable Long id) {
         reservationService.updateStatus(status, id);
+        return reservationService.getReservation(id);
     }
 
 }

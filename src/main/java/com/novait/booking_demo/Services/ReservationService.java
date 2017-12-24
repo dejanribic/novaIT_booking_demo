@@ -60,4 +60,8 @@ public class ReservationService {
         resToChange.setStatus(status);
         reservationRepository.save(resToChange);
     }
+
+    public Reservation getReservation(Long id) {
+         return reservationRepository.findOne(id);
+    }
 }

@@ -6,48 +6,48 @@ import java.io.Serializable;
 @SuppressWarnings({"unused", "WeakerAccess"})
 public class ReservationPK implements Serializable {
 
-    private long reservationId;
-    private long userId;
-    private long roomId;
-    private long hotelId;
+    private Long reservationId;
+    private Long userId;
+    private Long roomId;
+    private Long hotelId;
 
     public ReservationPK() {
     }
 
     @Id
-    public long getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(long userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
     @Id
-    public long getRoomId() {
+    public Long getRoomId() {
         return roomId;
     }
 
-    public void setRoomId(long roomId) {
+    public void setRoomId(Long roomId) {
         this.roomId = roomId;
     }
 
     @Id
-    public long getHotelId() {
+    public Long getHotelId() {
         return hotelId;
     }
 
-    public void setHotelId(long hotelId) {
+    public void setHotelId(Long hotelId) {
         this.hotelId = hotelId;
     }
 
     @Id
     //@GeneratedValue(strategy = GenerationType.AUTO)
-    public long getReservationId() {
+    public Long getReservationId() {
         return reservationId;
     }
 
-    public void setReservationId(long reservationId) {
+    public void setReservationId(Long reservationId) {
         this.reservationId = reservationId;
     }
 

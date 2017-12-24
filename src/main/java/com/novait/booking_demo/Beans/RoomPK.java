@@ -6,24 +6,24 @@ import java.io.Serializable;
 @SuppressWarnings("unused")
 public class RoomPK implements Serializable{
 
-    private long roomId;
-    private long hotelId;
+    private Long roomId;
+    private Long hotelId;
 
     @Id
-    public long getRoomId() {
+    public Long getRoomId() {
         return roomId;
     }
 
-    public void setRoomId(long roomId) {
+    public void setRoomId(Long roomId) {
         this.roomId = roomId;
     }
 
     @Id
-    public long getHotelId() {
+    public Long getHotelId() {
         return hotelId;
     }
 
-    public void setHotelId(long hotelId) {
+    public void setHotelId(Long hotelId) {
         this.hotelId = hotelId;
     }
 

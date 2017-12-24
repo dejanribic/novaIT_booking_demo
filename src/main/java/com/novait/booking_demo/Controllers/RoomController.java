@@ -3,9 +3,7 @@ package com.novait.booking_demo.Controllers;
 import java.util.List;
 
 import com.novait.booking_demo.Beans.Room;
-import com.novait.booking_demo.Beans.RoomPK;
 import com.novait.booking_demo.Beans.RoomType;
-import com.novait.booking_demo.Beans.User;
 import com.novait.booking_demo.Services.RoomService;
 import com.novait.booking_demo.Services.RoomTypeService;
 import org.slf4j.Logger;
@@ -33,9 +31,7 @@ public class RoomController {
 
     @RequestMapping("/rooms")
     public List<Room> getAllRooms() {
-
         logger.info("\nTest: getting all rooms!!\t");
-
         return roomService.getAllRooms();
     }
 
@@ -44,13 +40,20 @@ public class RoomController {
         return roomTypeService.getAllRoomTypes();
     }
 
+    @RequestMapping("/rooms/{id}")
+    public Room getRoom(@PathVariable Long id) {
+        return roomService.getRoom(id);
+    }
+
     @RequestMapping(method = RequestMethod.PUT, value ="/rooms/numberChange/{id}")
-    public void updateRoomNumber(@RequestBody Integer number, @PathVariable Long id) {
+    public Room updateRoomNumber(@RequestBody Integer number, @PathVariable Long id) {
         roomService.changeRoomNumber(id, number);
+        return roomService.getRoom(id);
     }
 
     @RequestMapping(method = RequestMethod.PUT, value ="/rooms/typeChange/{id}")
-    public void updateRoomType(@RequestBody String roomType, @PathVariable Long id) {
+    public Room updateRoomType(@RequestBody String roomType, @PathVariable Long id) {
         roomService.changeRoomType(id, roomType);
+        return roomService.getRoom(id);
     }
 }

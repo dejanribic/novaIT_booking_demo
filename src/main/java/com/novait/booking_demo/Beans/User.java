@@ -7,7 +7,7 @@ import java.sql.Timestamp;
 @Entity
 public class User {
 
-    private long id;
+    private Long id;
     private String name;
     private String email;
     private String password;
@@ -15,7 +15,7 @@ public class User {
 
     public User() {}
 
-    public User(long id, String name, String email, String password, Timestamp creationTime) {
+    public User(Long id, String name, String email, String password, Timestamp creationTime) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -25,11 +25,11 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -73,17 +73,17 @@ public class User {
         this.creationTime = creationTime;
     }
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                "id=" + id +
-                ", fullName='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", creationTime=" + creationTime +
-                '}';    }
-
     public boolean fieldCheck() {
         return (this.name != null && this.password != null && this.email != null);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 }

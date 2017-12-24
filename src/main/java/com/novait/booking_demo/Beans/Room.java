@@ -7,15 +7,15 @@ import javax.persistence.*;
 @IdClass(RoomPK.class)
 public class Room {
 
-    private long roomId;
-    private long number;
-    private long hotelId;
-    private long roomTypeId;
+    private Long roomId;
+    private Long number;
+    private Long hotelId;
+    private Long roomTypeId;
 
     public Room() {
     }
 
-    public Room(long roomId, long number, long hotelId, long roomTypeId) {
+    public Room(Long roomId, Long number, Long hotelId, Long roomTypeId) {
         this.roomId = roomId;
         this.number = number;
         this.hotelId = hotelId;
@@ -24,46 +24,46 @@ public class Room {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public long getRoomId() {
+    public Long getRoomId() {
         return roomId;
     }
 
-    public void setRoomId(long roomId) {
+    public void setRoomId(Long roomId) {
         this.roomId = roomId;
     }
 
-    public long getNumber() {
+    public Long getNumber() {
         return number;
     }
 
-    public void setNumber(long number) {
+    public void setNumber(Long number) {
         this.number = number;
     }
 
     @Id
-    public long getHotelId() {
+    public Long getHotelId() {
         return hotelId;
     }
 
-    public void setHotelId(long hotelId) {
+    public void setHotelId(Long hotelId) {
         this.hotelId = hotelId;
     }
 
-    public long getRoomTypeId() {
+    public Long getRoomTypeId() {
         return roomTypeId;
     }
 
-    public void setRoomTypeId(long roomTypeId) {
+    public void setRoomTypeId(Long roomTypeId) {
         this.roomTypeId = roomTypeId;
     }
 
     @Override
-    public String toString() {
-        return "Room{" +
-                "roomId=" + roomId +
-                ", number=" + number +
-                ", hotelId=" + hotelId +
-                ", roomTypeId=" + roomTypeId +
-                '}';
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 }

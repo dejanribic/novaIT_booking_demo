@@ -28,8 +28,9 @@ public class InvoiceController {
     }
 
     @RequestMapping(method = RequestMethod.PUT, value ="/invoices/{id}")
-    public void updateInvoiceStatus(@RequestBody Integer status, @PathVariable Long id) {
+    public Invoice updateInvoiceStatus(@RequestBody Integer status, @PathVariable Long id) {
         invoiceService.updateStatus(status, id);
+        return invoiceService.getInvoice(id);
     }
 
 }

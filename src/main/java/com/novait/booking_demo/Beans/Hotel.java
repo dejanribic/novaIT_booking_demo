@@ -9,7 +9,7 @@ import javax.persistence.Id;
 @Entity
 public class Hotel {
 
-    private long id;
+    private Long id;
 
     private String name;
     private String address;
@@ -18,7 +18,7 @@ public class Hotel {
     public Hotel() {
     }
 
-    public Hotel(long id, String name, String address, String phone) {
+    public Hotel(Long id, String name, String address, String phone) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -27,11 +27,11 @@ public class Hotel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -57,5 +57,15 @@ public class Hotel {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 }

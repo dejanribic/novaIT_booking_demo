@@ -6,37 +6,37 @@ import java.io.Serializable;
 @SuppressWarnings({"unused", "WeakerAccess"})
 public class InvoicePK implements Serializable {
 
-    private long invoiceId;
-    private long roomId;
-    private long hotelId;
+    private Long invoiceId;
+    private Long roomId;
+    private Long hotelId;
 
     public InvoicePK() {
     }
 
     @Id
-    public long getInvoiceId() {
+    public Long getInvoiceId() {
         return invoiceId;
     }
 
-    public void setInvoiceId(long invoiceId) {
+    public void setInvoiceId(Long invoiceId) {
         this.invoiceId = invoiceId;
     }
 
     @Id
-    public long getRoomId() {
+    public Long getRoomId() {
         return roomId;
     }
 
-    public void setRoomId(long roomId) {
+    public void setRoomId(Long roomId) {
         this.roomId = roomId;
     }
 
     @Id
-    public long getHotelId() {
+    public Long getHotelId() {
         return hotelId;
     }
 
-    public void setHotelId(long hotelId) {
+    public void setHotelId(Long hotelId) {
         this.hotelId = hotelId;
     }
 

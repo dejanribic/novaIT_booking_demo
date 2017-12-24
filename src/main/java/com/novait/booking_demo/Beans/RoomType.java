@@ -9,24 +9,24 @@ import javax.persistence.Id;
 @Entity
 public class RoomType {
 
-    private long roomTypeID;
+    private Long roomTypeID;
     private String typeName;
 
     public RoomType() {
     }
 
-    public RoomType(long roomTypeID, String typeName) {
+    public RoomType(Long roomTypeID, String typeName) {
         this.roomTypeID = roomTypeID;
         this.typeName = typeName;
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public long getRoomTypeID() {
+    public Long getRoomTypeID() {
         return roomTypeID;
     }
 
-    public void setRoomTypeID(long roomTypeID) {
+    public void setRoomTypeID(Long roomTypeID) {
         this.roomTypeID = roomTypeID;
     }
 
@@ -39,10 +39,12 @@ public class RoomType {
     }
 
     @Override
-    public String toString() {
-        return "RoomType{" +
-                "roomTypeID=" + roomTypeID +
-                ", typeName='" + typeName + '\'' +
-                '}';
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 }

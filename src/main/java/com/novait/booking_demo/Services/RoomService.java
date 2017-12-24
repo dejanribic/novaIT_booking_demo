@@ -2,6 +2,7 @@ package com.novait.booking_demo.Services;
 
 import com.novait.booking_demo.Beans.Room;
 import com.novait.booking_demo.Beans.RoomType;
+import com.novait.booking_demo.Beans.User;
 import com.novait.booking_demo.Repositories.RoomRepository;
 import com.novait.booking_demo.Repositories.RoomTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,5 +48,9 @@ public class RoomService {
         for (Room r : rooms) {
             System.out.println(r.toString());
         }
+    }
+
+    public Room getRoom(Long id) {
+        return roomRepository.findByRoomId(id);
     }
 }

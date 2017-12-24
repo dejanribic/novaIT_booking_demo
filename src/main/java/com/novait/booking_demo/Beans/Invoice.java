@@ -7,10 +7,10 @@ import javax.persistence.*;
 @IdClass(InvoicePK.class)
 public class Invoice {
 
-    private long invoiceId;
-    private long roomId;
-    private long hotelId;
-    private long userId;
+    private Long invoiceId;
+    private Long roomId;
+    private Long hotelId;
+    private Long userId;
     private double price;
 
     /*
@@ -24,7 +24,7 @@ public class Invoice {
     public Invoice() {
     }
 
-    public Invoice(long invoiceId, long roomId, long hotelId, long userId, double price) {
+    public Invoice(Long invoiceId, Long roomId, Long hotelId, Long userId, double price) {
         this.invoiceId = invoiceId;
         this.roomId = roomId;
         this.hotelId = hotelId;
@@ -34,38 +34,38 @@ public class Invoice {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public long getInvoiceId() {
+    public Long getInvoiceId() {
         return invoiceId;
     }
 
-    public void setInvoiceId(long invoiceId) {
+    public void setInvoiceId(Long invoiceId) {
         this.invoiceId = invoiceId;
     }
 
     @Id
-    public long getRoomId() {
+    public Long getRoomId() {
         return roomId;
     }
 
-    public void setRoomId(long roomId) {
+    public void setRoomId(Long roomId) {
         this.roomId = roomId;
     }
 
     @Id
-    public long getHotelId() {
+    public Long getHotelId() {
         return hotelId;
     }
 
-    public void setHotelId(long hotelId) {
+    public void setHotelId(Long hotelId) {
         this.hotelId = hotelId;
     }
 
     @Id
-    public long getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(long userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
@@ -86,14 +86,12 @@ public class Invoice {
     }
 
     @Override
-    public String toString() {
-        return "Invoice{" +
-                "invoiceId=" + invoiceId +
-                ", roomId=" + roomId +
-                ", hotelId=" + hotelId +
-                ", userId=" + userId +
-                ", price=" + price +
-                ", status=" + status +
-                '}';
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 }

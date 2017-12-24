@@ -46,17 +46,20 @@ public class UserController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value ="/users")
-    public void addUser(@RequestBody User user) {
+    public User addUser(@RequestBody User user) {
         userService.createNewUser(user);
+        return user;
     }
 
     @RequestMapping(method = RequestMethod.PUT, value ="/users/{id}")
-    public void updateUserEmail(@RequestBody String email, @PathVariable Long id) {
+    public User updateUserEmail(@RequestBody String email, @PathVariable Long id) {
         userService.changeUserEmail(id, email);
+        return userService.getUser(id);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value ="/users/{id}")
-    public void deleteUser(@PathVariable Long id) {
+    public User deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);
+        return userService.getUser(id);
     }
 }

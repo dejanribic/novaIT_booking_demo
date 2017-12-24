@@ -38,4 +38,8 @@ public class InvoiceService {
             System.out.println(invoice.toString());
         }
     }
+
+    public Invoice getInvoice(Long id) {
+        return invoiceRepository.findOne(id);
+    }
 }

@@ -6,24 +6,24 @@ import java.io.Serializable;
 @SuppressWarnings("WeakerAccess")
 public class EmployeePK implements Serializable {
 
-    private long employeeId;
-    private long hotelId;
+    private Long employeeId;
+    private Long hotelId;
 
     @Id
-    public long getEmployeeId() {
+    public Long getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeId(long employeeId) {
+    public void setEmployeeId(Long employeeId) {
         this.employeeId = employeeId;
     }
 
     @Id
-    public long getHotelId() {
+    public Long getHotelId() {
         return hotelId;
     }
 
-    public void setHotelId(long hotelId) {
+    public void setHotelId(Long hotelId) {
         this.hotelId = hotelId;
     }
 
