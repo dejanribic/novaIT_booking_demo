@@ -1,13 +1,26 @@
-package com.novait.booking_demo.Beans;
+package com.novait.booking_demo.Models.Entities;
 
 import javax.persistence.Id;
 import java.io.Serializable;
 
-@SuppressWarnings("unused")
-public class RoomPK implements Serializable{
+@SuppressWarnings({"unused", "WeakerAccess"})
+public class InvoicePK implements Serializable {
 
+    private Long invoiceId;
     private Long roomId;
     private Long hotelId;
+
+    public InvoicePK() {
+    }
+
+    @Id
+    public Long getInvoiceId() {
+        return invoiceId;
+    }
+
+    public void setInvoiceId(Long invoiceId) {
+        this.invoiceId = invoiceId;
+    }
 
     @Id
     public Long getRoomId() {
@@ -32,16 +45,18 @@ public class RoomPK implements Serializable{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        RoomPK roomPK = (RoomPK) o;
+        InvoicePK invoicePK = (InvoicePK) o;
 
-        if (roomId != roomPK.roomId) return false;
-        return hotelId == roomPK.hotelId;
+        if (invoiceId != invoicePK.invoiceId) return false;
+        if (roomId != invoicePK.roomId) return false;
+        return hotelId == invoicePK.hotelId;
 
     }
 
     @Override
     public int hashCode() {
-        int result = (int) (roomId ^ (roomId >>> 32));
+        int result = (int) (invoiceId ^ (invoiceId >>> 32));
+        result = 31 * result + (int) (roomId ^ (roomId >>> 32));
         result = 31 * result + (int) (hotelId ^ (hotelId >>> 32));
         return result;
     }

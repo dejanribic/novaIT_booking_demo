@@ -1,6 +1,6 @@
 package com.novait.booking_demo.Services;
 
-import com.novait.booking_demo.Beans.Invoice;
+import com.novait.booking_demo.Models.Entities.Invoice;
 import com.novait.booking_demo.Repositories.InvoiceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

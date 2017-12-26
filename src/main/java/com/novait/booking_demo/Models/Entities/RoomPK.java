@@ -1,21 +1,21 @@
-package com.novait.booking_demo.Beans;
+package com.novait.booking_demo.Models.Entities;
 
 import javax.persistence.Id;
 import java.io.Serializable;
 
-@SuppressWarnings("WeakerAccess")
-public class EmployeePK implements Serializable {
+@SuppressWarnings("unused")
+public class RoomPK implements Serializable{
 
-    private Long employeeId;
+    private Long roomId;
     private Long hotelId;
 
     @Id
-    public Long getEmployeeId() {
-        return employeeId;
+    public Long getRoomId() {
+        return roomId;
     }
 
-    public void setEmployeeId(Long employeeId) {
-        this.employeeId = employeeId;
+    public void setRoomId(Long roomId) {
+        this.roomId = roomId;
     }
 
     @Id
@@ -32,16 +32,16 @@ public class EmployeePK implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        EmployeePK that = (EmployeePK) o;
+        RoomPK roomPK = (RoomPK) o;
 
-        if (employeeId != that.employeeId) return false;
-        return hotelId == that.hotelId;
+        if (roomId != roomPK.roomId) return false;
+        return hotelId == roomPK.hotelId;
 
     }
 
     @Override
     public int hashCode() {
-        int result = (int) (employeeId ^ (employeeId >>> 32));
+        int result = (int) (roomId ^ (roomId >>> 32));
         result = 31 * result + (int) (hotelId ^ (hotelId >>> 32));
         return result;
     }

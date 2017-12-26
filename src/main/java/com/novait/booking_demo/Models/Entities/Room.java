@@ -1,4 +1,4 @@
-package com.novait.booking_demo.Beans;
+package com.novait.booking_demo.Models.Entities;
 
 import javax.persistence.*;
 

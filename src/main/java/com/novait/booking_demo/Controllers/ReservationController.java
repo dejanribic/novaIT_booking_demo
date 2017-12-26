@@ -1,7 +1,7 @@
 package com.novait.booking_demo.Controllers;
 
 
-import com.novait.booking_demo.Beans.Reservation;
+import com.novait.booking_demo.Models.Entities.Reservation;
 import com.novait.booking_demo.Services.ReservationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

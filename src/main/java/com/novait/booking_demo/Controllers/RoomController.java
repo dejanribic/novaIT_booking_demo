@@ -2,8 +2,8 @@ package com.novait.booking_demo.Controllers;
 
 import java.util.List;
 
-import com.novait.booking_demo.Beans.Room;
-import com.novait.booking_demo.Beans.RoomType;
+import com.novait.booking_demo.Models.Entities.Room;
+import com.novait.booking_demo.Models.Entities.RoomType;
 import com.novait.booking_demo.Services.RoomService;
 import com.novait.booking_demo.Services.RoomTypeService;
 import org.slf4j.Logger;
@@ -46,7 +46,7 @@ public class RoomController {
     }
 
     @RequestMapping(method = RequestMethod.PUT, value ="/rooms/numberChange/{id}")
-    public Room updateRoomNumber(@RequestBody Integer number, @PathVariable Long id) {
+    public Room updateRoomNumber(@RequestBody Long number, @PathVariable Long id) {
         roomService.changeRoomNumber(id, number);
         return roomService.getRoom(id);
     }

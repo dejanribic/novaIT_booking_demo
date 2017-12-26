@@ -1,44 +1,42 @@
-package com.novait.booking_demo.Beans;
+package com.novait.booking_demo.Models.Entities;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import javax.persistence.*;
-import java.sql.Timestamp;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @SuppressWarnings("unused")
 @Entity
-@IdClass(EmployeePK.class)
-public class Employee {
+public class Hotel {
 
-    private Long employeeId;
-    private Long hotelId;
+    private Long id;
+
     private String name;
-    private String email;
     private String address;
-    private Timestamp creationTime;
+    private String phone;
 
-    public Employee() {
+    public Hotel() {
+    }
+
+    public Hotel(Long id, String name, String address, String phone) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public Long getEmployeeId() {
-        return employeeId;
+    public Long getId() {
+        return id;
     }
 
-    public void setEmployeeId(Long employeeId) {
-        this.employeeId = employeeId;
-    }
-
-    @Id
-    public Long getHotelId() {
-        return hotelId;
-    }
-
-    public void setHotelId(Long hotelId) {
-        this.hotelId = hotelId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -49,14 +47,6 @@ public class Employee {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getAddress() {
         return address;
     }
@@ -65,19 +55,18 @@ public class Employee {
         this.address = address;
     }
 
-    public Timestamp getCreationTime() {
-        return creationTime;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setCreationTime(Timestamp creationTime) {
-        this.creationTime = creationTime;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
-
 
     public String toString() {
         return new ToStringBuilder(this).
                 append("name", name).
-                append("email", email).
+                append("phone", phone).
                 append("address", address).
                 toString();
     }
@@ -87,7 +76,7 @@ public class Employee {
         // You pick a hard-coded, randomly chosen, non-zero, odd number ideally different for each class
         return new HashCodeBuilder(17, 37).
                 append(name).
-                append(email).
+                append(phone).
                 append(address).
                 toHashCode();
     }
@@ -99,13 +88,12 @@ public class Employee {
         if (obj.getClass() != getClass()) {
             return false;
         }
-        Employee rhs = (Employee) obj;
+        Hotel rhs = (Hotel) obj;
         return new EqualsBuilder()
                 .appendSuper(super.equals(obj))
                 .append(name, rhs.name)
-                .append(email, rhs.email)
+                .append(phone, rhs.phone)
                 .append(address, rhs.address)
                 .isEquals();
     }
 }
-

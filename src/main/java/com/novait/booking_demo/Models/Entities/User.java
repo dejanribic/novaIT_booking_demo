@@ -1,4 +1,4 @@
-package com.novait.booking_demo.Beans;
+package com.novait.booking_demo.Models.Entities;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -14,6 +14,7 @@ public class User {
     private Timestamp creationTime;
 
     public User() {}
+
 
     public User(Long id, String name, String email, String password, Timestamp creationTime) {
         this.id = id;

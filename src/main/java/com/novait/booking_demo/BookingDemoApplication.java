@@ -1,7 +1,8 @@
 package com.novait.booking_demo;
 
-import com.novait.booking_demo.Beans.Room;
-import com.novait.booking_demo.Beans.RoomType;
+import com.novait.booking_demo.Models.Entities.ContactInfo;
+import com.novait.booking_demo.Models.Entities.Room;
+import com.novait.booking_demo.Models.Entities.RoomType;
 import com.novait.booking_demo.Repositories.RoomRepository;
 import com.novait.booking_demo.Repositories.RoomTypeRepository;
 import com.novait.booking_demo.Services.RoomService;
@@ -39,7 +40,9 @@ public class BookingDemoApplication {
 	}
 
 	private void test() {
+
 		System.out.println("Successful app start!\n@PostConstruct method called!");
+
 	}
 
 	private void generateRoomTypes() {
@@ -59,9 +62,9 @@ public class BookingDemoApplication {
 	private void generateRooms() {
 		System.out.println("\nGenerating rooms!");
 
-		Room r1 = new Room(1L, 1, 1L, 1L); // single_bed
-		Room r2 = new Room(2L, 2, 1L, 2L); // double_bed
-		Room r3 = new Room(3L, 3, 1L, 3L); // suite
+		Room r1 = new Room(1L, 1L, 1L, 1L); // single_bed
+		Room r2 = new Room(2L, 2L, 1L, 2L); // double_bed
+		Room r3 = new Room(3L, 3L, 1L, 3L); // suite
 
 		roomRepository.save(r1);
 		roomRepository.save(r2);

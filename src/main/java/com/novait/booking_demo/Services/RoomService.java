@@ -1,8 +1,7 @@
 package com.novait.booking_demo.Services;
 
-import com.novait.booking_demo.Beans.Room;
-import com.novait.booking_demo.Beans.RoomType;
-import com.novait.booking_demo.Beans.User;
+import com.novait.booking_demo.Models.Entities.Room;
+import com.novait.booking_demo.Models.Entities.RoomType;
 import com.novait.booking_demo.Repositories.RoomRepository;
 import com.novait.booking_demo.Repositories.RoomTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +22,7 @@ public class RoomService {
         this.roomTypeRepository = roomTypeRepository;
     }
 
-    public boolean changeRoomNumber(Long id, Integer number) {
+    public boolean changeRoomNumber(Long id, Long number) {
         Room r = roomRepository.findByRoomId(id);
         r.setNumber(number);
         return (roomRepository.save(r) != null);
